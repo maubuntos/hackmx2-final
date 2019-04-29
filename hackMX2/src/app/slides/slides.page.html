@@ -1,0 +1,50 @@
+<ion-content class="tutorial-page">
+
+    <div padding-top text-end>
+        <ion-button fill="clear" [routerLink]="'/app/'" routerDirection="forward">Saltar
+            <ion-icon name="arrow-forward"></ion-icon>
+        </ion-button>
+    </div>
+
+
+    <ion-slides class="slides" pager=true>
+
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <img src="../../assets/santa.png" alt="">
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <h2>Hola!!</h2>
+                        <p>Soy santa, mi gran amigo bolo te ayudara en la busqueda de tu regalo, lo unico que tienes que hacer es decirle que es lo que deseas</p>
+                        <br>
+                        <br>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+
+        <ion-slide>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
+                        <img style="width: 200px;" src="../../assets/boloSlide.png" alt="">
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <h2>¿Estas listo?</h2>
+                        <ion-button expand="block" fill="clear" [routerLink]="'/app/'" routerDirection="forward">Comenzar</ion-button>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-slide>
+
+
+    </ion-slides>
+
+
+</ion-content>

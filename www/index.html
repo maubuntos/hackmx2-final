@@ -1,0 +1,82 @@
+<!doctype HTML>
+<html>
+<head>
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+    <script src="https://dist.3d.io/3dio-js/1.1.x/3dio.min.js"></script>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/uikit.min.css" />
+    <script src="js/uikit.min.js"></script>
+    <script src="js/uikit-icons.min.js"></script>
+</head>
+
+  <body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded arjs='sourceType: webcam; detectionMode: mono_and_matrix; matrixCodeType: 3x3; debugUIEnabled: false;''>
+
+      <!-- Esenario -->
+      <a-box position="0.2 0 -1" scale="0.05 0.05 0.05" rotation="0 45 0" color="#4CC3D9"></a-box>
+      <a-sphere position="0 0 -1" scale="0.05 0.05 0.05" radius="1.25" color="#EF2D5E"></a-sphere>
+
+      <a-entity> 
+          <a-entity gltf-model="Thonker.glb" position="0 0 -1" scale="3 3 3" crossOrigin="anonymous">
+      </a-entity>
+
+      <!-- <a-box position="0 0 0" scale="0.05 0.05 0.05" rotation="0 45 0" color="#4CC3D9" sound="src: url(liverpool.mp3); autoplay: true" animation="property: position; to: 0 0 -1; loop: true; dur: 1000; easing: linear"></a-box> -->
+      <!-- Finde de escenario -->
+
+
+
+      		<!-- handle unknown marker -->
+		<!-- <a-marker type='unknown'>
+			<a-box depth="1" height="1" width="1" position='0 0.5 0' material='opacity: 0.5; side:double; color:blue;'></a-box>
+		</a-marker> -->
+
+		<!-- handle hiro marker -->
+		<!-- <a-marker preset='hiro'>
+        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:red;'>
+          <a-torus-knot radius='0.26' radius-tubular='0.05'>
+            <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-torus-knot>
+        </a-box>
+      </a-marker> -->
+
+
+
+
+
+
+      <!-- Lo que se mostrara a escanear -->
+      <a-marker preset="hiro">
+          <!-- <a-box position="0 0 0" scale="0.5 0.5 0.5" rotation="0 0 0" color="#4CC3D9" sound="src: url(liverpool.mp3); autoplay: true;" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"></a-box> -->
+
+          <a-entity> 
+              <a-entity gltf-model="models/nave/export.gltf" position="0 0 -1" scale="0.05 0.05 0.05" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+          </a-entity>
+
+      </a-marker>
+      <!-- Fin de escaneo -->
+
+      		<!-- handle matrix marker -->
+		<a-marker type='barcode' value='5'>
+        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:pink;'>
+          <a-torus-knot radius='0.26' radius-tubular='0.05'>
+            <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-torus-knot>
+        </a-box>
+      </a-marker>
+      
+      <!-- handle kanji marker -->
+      <a-marker preset='kanji'>
+        <a-box position='0 0.5 0' material='opacity: 0.5; side: double;color:green;'>
+          <a-torus-knot radius='0.26' radius-tubular='0.05'>
+            <a-animation attribute="rotation" to="360 0 0" dur="5000" easing='linear' repeat="indefinite"></a-animation>
+          </a-torus-knot>
+        </a-box>
+      </a-marker>
+
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
